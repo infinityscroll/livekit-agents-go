@@ -1,0 +1,101 @@
+LiveKit Agents Go v0.1.0 cold-start baseline
+Source commit: ca6bbcc5de5e51d8d6aca82114e98b0a9c464a65
+Captured: 2026-08-29
+Build: CGO_ENABLED=0 go build -trimpath
+Stripped build: CGO_ENABLED=0 go build -trimpath -ldflags='-s -w'
+Measure: measure -json -samples 200 -warmups 10
+Probe semantics: retains representative public constructor functions without invoking network, credentials, models, or providers.
+
+OS:
+ProductName:		macOS
+ProductVersion:		26.6.2
+BuildVersion:		25G83
+Darwin 25.6.0 arm64
+CPU: Apple M5
+Logical CPUs: 10
+Memory bytes: 25769803776
+go version go1.27.0 darwin/arm64
+Load snapshot after collection:
+ 5:04  up 8 days, 11:47, 1 user, load averages: 8.14 7.02 11.93
+
+Source contract SHA-256:
+d834a692ff37115b6a312d2d8993e31a4d0430fe273b0cb4521654e5ae7ae838  go.mod
+cb589c27ad7cf1c6f6c990bec014e0a72e923088ff244349457ae424d96e0709  go.sum
+fea249dd45c94ef4fc821a75061a9cbacc1ae065222e8dd9a4b88ce383dd9ca9  docs/api-manifest.json
+2d7b4e0a6439eb9e84ce8c25924f66a26ed8428789eef7d015cd1e9aeaf82205  docs/parity-manifest.json
+
+Binary sizes:
+core 41359986 bytes
+core.stripped 28426834 bytes
+voice 44258258 bytes
+voice.stripped 30417122 bytes
+elevenlabs 31688770 bytes
+elevenlabs.stripped 21739906 bytes
+
+Binary SHA-256:
+3d12a0cfea9601aba99f640bb9bed7519a0ba6dbdd4078173f283bd30144b626  core
+9e43a5073c46579b757026f67edfc25e61f392f466ffc881f5f8e4c14bd17358  core.stripped
+97c2033f1f9963c3e852d0be85eddeeba6225fb69bd26fdd897c526fe1d34fc0  voice
+372fdcba2bf307bcdb1d26b2cf8236b9925a43a966cc1994b5a9f90812021beb  voice.stripped
+0aabd479193d79a92ab9d65b321e043358114b5e14e54b1ae55e4a5519de260d  elevenlabs
+91a95762a1ff6415c4d2dcee658458bef713dc3c52b37f66dd51ed7ca856806a  elevenlabs.stripped
+
+Peak RSS raw output, core:
+        0.00 real         0.00 user         0.00 sys
+            24870912  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+                1921  page reclaims
+                   0  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                  12  signals received
+                   5  voluntary context switches
+                 235  involuntary context switches
+            91428651  instructions retired
+            32245780  cycles elapsed
+            11649624  peak memory footprint
+
+Peak RSS raw output, voice:
+        0.00 real         0.00 user         0.00 sys
+            26132480  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+                2015  page reclaims
+                   0  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   9  signals received
+                   2  voluntary context switches
+                 240  involuntary context switches
+            94715199  instructions retired
+            33647361  cycles elapsed
+            12436056  peak memory footprint
+
+Peak RSS raw output, ElevenLabs:
+        0.00 real         0.00 user         0.00 sys
+            22413312  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+                1723  page reclaims
+                   0  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   8  signals received
+                   1  voluntary context switches
+                 192  involuntary context switches
+            80153481  instructions retired
+            28246991  cycles elapsed
+            10338856  peak memory footprint

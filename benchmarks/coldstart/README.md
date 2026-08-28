@@ -35,4 +35,5 @@ Pass `-json` to retain every sample in nanoseconds for a checked baseline:
 For peak RSS, run one probe through the platform's `time` executable. On
 macOS use `/usr/bin/time -l`; on Linux use `/usr/bin/time -v`. Record the OS,
 hardware, power mode, Go version, build flags, and raw samples with published
-results. Do not compare results collected on different hosts.
+results. Do not compare results collected on different hosts. See the
+[`../baselines`](../baselines) directory for the checked release evidence.

@@ -47,15 +47,17 @@ CPU governor/power mode, sample count, and raw results with every release.
 
 ## Audited development baseline
 
-The following results were measured on an otherwise idle Apple M5 (10 logical
-CPUs, 24 GiB RAM), macOS 26.6.2, `darwin/arm64`, with Go 1.27. They are
-implementation evidence, not portable promises; compare only like-for-like
-runners and retain the raw samples when updating a release baseline. CI runs a
-short benchmark and fresh-process smoke pass; maintainers make regression
-decisions from longer samples collected on a controlled runner. Every tag
-release permanently attaches its sequential hot-path output, per-process cold
-samples, source revision and contract hashes, binary sizes, and peak-RSS
-metadata alongside the source archive.
+The following results were measured sequentially on an Apple M5 (10 logical
+CPUs, 24 GiB RAM), macOS 26.6.2, `darwin/arm64`, with Go 1.27. System services
+remained enabled; the raw metadata includes the collection-time load snapshot.
+These are implementation evidence, not portable promises; compare only
+like-for-like runners. The complete checked evidence is in
+[`benchmarks/baselines`](../benchmarks/baselines). CI runs a short benchmark and
+fresh-process smoke pass; maintainers make regression decisions from longer
+samples collected on a controlled runner. Every tag release permanently
+attaches its sequential hot-path output, per-process cold samples, source
+revision and contract hashes, binary sizes, and peak-RSS metadata alongside the
+source archive.
 
 ### Cold process start
 
@@ -69,9 +71,9 @@ sample; binary sizes are also shown for a second build with `-ldflags='-s -w'`.
 
 | Deployment graph | Mean | p50 | p95 | p99 | Peak RSS | Binary | Stripped binary |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| Core worker/server | 6.392 ms | 6.416 ms | 6.781 ms | 6.899 ms | 22.00 MiB | 39.44 MiB | 27.11 MiB |
-| Voice session | 6.700 ms | 6.685 ms | 7.128 ms | 8.122 ms | 22.73 MiB | 42.21 MiB | 29.01 MiB |
-| ElevenLabs STT + TTS | 5.887 ms | 5.907 ms | 6.199 ms | 6.503 ms | 22.22 MiB | 30.22 MiB | 20.73 MiB |
+| Core worker/server | 6.413 ms | 6.414 ms | 6.859 ms | 7.169 ms | 23.72 MiB | 39.44 MiB | 27.11 MiB |
+| Voice session | 6.649 ms | 6.676 ms | 7.056 ms | 7.357 ms | 24.92 MiB | 42.21 MiB | 29.01 MiB |
+| ElevenLabs STT + TTS | 5.888 ms | 5.911 ms | 6.337 ms | 6.652 ms | 21.38 MiB | 30.22 MiB | 20.73 MiB |
 
 These are lower-bound import/link-graph probes, not time-to-first-audio. A real
 agent's readiness additionally includes the explicitly configured prewarm,
@@ -79,10 +81,10 @@ network, room, and model-provider work.
 
 ### Focused hot paths
 
-The following are medians of three runs of:
+The following are medians of five runs of:
 
 ```sh
-CGO_ENABLED=0 go test -p 1 -run '^$' -bench . -benchmem -count=3 \
+CGO_ENABLED=0 go test -p 1 -run '^$' -bench . -benchmem -count=5 \
   ./inference ./stt ./tts ./tokenize \
   ./voice/backgroundaudio ./voice/recorderio
 ```
@@ -91,20 +93,20 @@ Bytes and allocations are Go benchmark accounting per operation.
 
 | Operation | Time/op | Bytes/op | Allocs/op |
 |---|---:|---:|---:|
-| LiveKit Inference STT 50 ms PCM packetization | 1.345 µs | 0 | 0 |
-| Interruption probability update | 67.51 ns | 0 | 0 |
-| Local turn audio-window update | 3.740 µs | 40,959 | 1 |
-| Inference final-transcript decode | 873.6 ns | 1,163 | 10 |
-| STT fallback primary recognize | 657.4 ns | 1,241 | 18 |
-| 48 kHz→24 kHz PCM fallback resample | 556.5 ns | 1,504 | 2 |
-| Sentence tokenization | 54.46 µs | 16,439 | 70 |
-| Word tokenization | 3.254 µs | 5,424 | 27 |
-| Provider markup conversion | 485.8 ns | 696 | 9 |
-| Plain transcript markup strip | 3.405 ns | 0 | 0 |
-| Background mixer, immediate two-stream 100 ms block | 5.210 µs | 0 | 0 |
-| Background 48 kHz mono converter, hot buffer | 16.25 ns | 64 | 1 |
-| Recorder stereo 100 ms mix | 8.348 µs | 20,480 | 1 |
-| Recorder mono 100 ms downmix | 2.744 µs | 20,480 | 1 |
+| LiveKit Inference STT 50 ms PCM packetization | 1.350 µs | 0 | 0 |
+| Interruption probability update | 67.76 ns | 0 | 0 |
+| Local turn audio-window update | 3.712 µs | 40,959 | 1 |
+| Inference final-transcript decode | 862.5 ns | 1,163 | 10 |
+| STT fallback primary recognize | 645.1 ns | 1,241 | 18 |
+| 48 kHz→24 kHz PCM fallback resample | 566.5 ns | 1,504 | 2 |
+| Sentence tokenization | 53.71 µs | 16,452 | 70 |
+| Word tokenization | 3.214 µs | 5,424 | 27 |
+| Provider markup conversion | 486.9 ns | 696 | 9 |
+| Plain transcript markup strip | 3.477 ns | 0 | 0 |
+| Background mixer, immediate two-stream 100 ms block | 5.517 µs | 0 | 0 |
+| Background 48 kHz mono converter, hot buffer | 16.60 ns | 64 | 1 |
+| Recorder stereo 100 ms mix | 8.346 µs | 20,480 | 1 |
+| Recorder mono 100 ms downmix | 2.654 µs | 20,480 | 1 |
 
 The zero-allocation packetizer, interruption update, transcript fast path, and
 immediate mixer are explicit regression gates. Other allocation counts include

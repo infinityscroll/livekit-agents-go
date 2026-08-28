@@ -1,0 +1,146 @@
+# LiveKit Agents Go v0.1.0 hot-path baseline
+# Source commit: ca6bbcc5de5e51d8d6aca82114e98b0a9c464a65
+# Captured: 2026-08-29, Apple M5, macOS 26.6.2, Go 1.27.0 darwin/arm64
+# Command: CGO_ENABLED=0 GOMAXPROCS=10 go test -p 1 -run '^$' -bench . -benchmem -count=5 ./inference ./stt ./tts ./tokenize ./voice/backgroundaudio ./voice/recorderio
+# Collection note: packages were serialized; OS services remained enabled. See metadata.txt for the load snapshot.
+goos: darwin
+goarch: arm64
+pkg: github.com/livekit/agents-go/inference
+cpu: Apple M5
+BenchmarkLocalTurnAudioWindow-10               	  322806	      3698 ns/op	 865.39 MB/s	   40959 B/op	       1 allocs/op
+BenchmarkLocalTurnAudioWindow-10               	  314058	      3778 ns/op	 846.95 MB/s	   40959 B/op	       1 allocs/op
+BenchmarkLocalTurnAudioWindow-10               	  327603	      3806 ns/op	 840.68 MB/s	   40959 B/op	       1 allocs/op
+BenchmarkLocalTurnAudioWindow-10               	  318687	      3711 ns/op	 862.31 MB/s	   40959 B/op	       1 allocs/op
+BenchmarkLocalTurnAudioWindow-10               	  315121	      3712 ns/op	 862.00 MB/s	   40959 B/op	       1 allocs/op
+BenchmarkEstimateInterruptionProbability-10    	17796397	        67.72 ns/op	       0 B/op	       0 allocs/op
+BenchmarkEstimateInterruptionProbability-10    	17653634	        67.76 ns/op	       0 B/op	       0 allocs/op
+BenchmarkEstimateInterruptionProbability-10    	17743910	        67.76 ns/op	       0 B/op	       0 allocs/op
+BenchmarkEstimateInterruptionProbability-10    	17608808	        67.78 ns/op	       0 B/op	       0 allocs/op
+BenchmarkEstimateInterruptionProbability-10    	17745922	        68.14 ns/op	       0 B/op	       0 allocs/op
+BenchmarkInferenceSTTPacketize50ms-10          	  893984	      1351 ns/op	1184.29 MB/s	       0 B/op	       0 allocs/op
+BenchmarkInferenceSTTPacketize50ms-10          	  872882	      1351 ns/op	1184.19 MB/s	       0 B/op	       0 allocs/op
+BenchmarkInferenceSTTPacketize50ms-10          	  893652	      1346 ns/op	1188.46 MB/s	       0 B/op	       0 allocs/op
+BenchmarkInferenceSTTPacketize50ms-10          	  894634	      1350 ns/op	1184.83 MB/s	       0 B/op	       0 allocs/op
+BenchmarkInferenceSTTPacketize50ms-10          	  895995	      1347 ns/op	1187.76 MB/s	       0 B/op	       0 allocs/op
+BenchmarkLinearMonoResampler48kTo16k-10        	  354970	      3312 ns/op	2898.40 MB/s	   12928 B/op	       2 allocs/op
+BenchmarkLinearMonoResampler48kTo16k-10        	  354922	      3360 ns/op	2857.04 MB/s	   12928 B/op	       2 allocs/op
+BenchmarkLinearMonoResampler48kTo16k-10        	  374596	      3206 ns/op	2993.96 MB/s	   12928 B/op	       2 allocs/op
+BenchmarkLinearMonoResampler48kTo16k-10        	  372969	      3201 ns/op	2999.19 MB/s	   12928 B/op	       2 allocs/op
+BenchmarkLinearMonoResampler48kTo16k-10        	  377964	      3208 ns/op	2992.65 MB/s	   12928 B/op	       2 allocs/op
+BenchmarkDecodeInferenceSTTFinal-10            	 1385106	       865.4 ns/op	    1163 B/op	      10 allocs/op
+BenchmarkDecodeInferenceSTTFinal-10            	 1381086	       868.0 ns/op	    1163 B/op	      10 allocs/op
+BenchmarkDecodeInferenceSTTFinal-10            	 1393278	       862.4 ns/op	    1163 B/op	      10 allocs/op
+BenchmarkDecodeInferenceSTTFinal-10            	 1396436	       858.5 ns/op	    1163 B/op	      10 allocs/op
+BenchmarkDecodeInferenceSTTFinal-10            	 1391611	       862.5 ns/op	    1163 B/op	      10 allocs/op
+PASS
+ok  	github.com/livekit/agents-go/inference	29.992s
+goos: darwin
+goarch: arm64
+pkg: github.com/livekit/agents-go/stt
+cpu: Apple M5
+BenchmarkFallbackRecognizePrimary-10    	 1857529	       644.7 ns/op	    1241 B/op	      18 allocs/op
+BenchmarkFallbackRecognizePrimary-10    	 1855677	       644.3 ns/op	    1241 B/op	      18 allocs/op
+BenchmarkFallbackRecognizePrimary-10    	 1859600	       645.1 ns/op	    1241 B/op	      18 allocs/op
+BenchmarkFallbackRecognizePrimary-10    	 1857358	       645.1 ns/op	    1241 B/op	      18 allocs/op
+BenchmarkFallbackRecognizePrimary-10    	 1862196	       646.0 ns/op	    1241 B/op	      18 allocs/op
+PASS
+ok  	github.com/livekit/agents-go/stt	6.010s
+goos: darwin
+goarch: arm64
+pkg: github.com/livekit/agents-go/tts
+cpu: Apple M5
+BenchmarkPCM16Resampler48kTo24k-10    	 2120750	       564.9 ns/op	    1504 B/op	       2 allocs/op
+BenchmarkPCM16Resampler48kTo24k-10    	 2105430	       567.3 ns/op	    1504 B/op	       2 allocs/op
+BenchmarkPCM16Resampler48kTo24k-10    	 2132912	       566.5 ns/op	    1504 B/op	       2 allocs/op
+BenchmarkPCM16Resampler48kTo24k-10    	 2089072	       574.1 ns/op	    1504 B/op	       2 allocs/op
+BenchmarkPCM16Resampler48kTo24k-10    	 2134303	       566.2 ns/op	    1504 B/op	       2 allocs/op
+BenchmarkConvertMarkup-10             	 2432362	       495.6 ns/op	     696 B/op	       9 allocs/op
+BenchmarkConvertMarkup-10             	 2463861	       487.7 ns/op	     696 B/op	       9 allocs/op
+BenchmarkConvertMarkup-10             	 2468564	       486.8 ns/op	     696 B/op	       9 allocs/op
+BenchmarkConvertMarkup-10             	 2474344	       486.5 ns/op	     696 B/op	       9 allocs/op
+BenchmarkConvertMarkup-10             	 2468286	       486.9 ns/op	     696 B/op	       9 allocs/op
+BenchmarkStripPlainTranscript-10      	345112038	         3.481 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStripPlainTranscript-10      	345017774	         3.476 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStripPlainTranscript-10      	344734550	         3.477 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStripPlainTranscript-10      	345269342	         3.475 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStripPlainTranscript-10      	344737231	         3.479 ns/op	       0 B/op	       0 allocs/op
+PASS
+ok  	github.com/livekit/agents-go/tts	18.042s
+goos: darwin
+goarch: arm64
+pkg: github.com/livekit/agents-go/tokenize
+cpu: Apple M5
+BenchmarkSentenceTokenizer-10            	   22330	     53710 ns/op	   16445 B/op	      70 allocs/op
+BenchmarkSentenceTokenizer-10            	   22288	     53909 ns/op	   16446 B/op	      70 allocs/op
+BenchmarkSentenceTokenizer-10            	   22278	     53825 ns/op	   16456 B/op	      70 allocs/op
+BenchmarkSentenceTokenizer-10            	   22351	     53690 ns/op	   16452 B/op	      70 allocs/op
+BenchmarkSentenceTokenizer-10            	   22365	     53656 ns/op	   16466 B/op	      70 allocs/op
+BenchmarkWordTokenizer-10                	  374199	      3197 ns/op	    5424 B/op	      27 allocs/op
+BenchmarkWordTokenizer-10                	  371415	      3210 ns/op	    5424 B/op	      27 allocs/op
+BenchmarkWordTokenizer-10                	  373230	      3214 ns/op	    5424 B/op	      27 allocs/op
+BenchmarkWordTokenizer-10                	  357339	      3296 ns/op	    5424 B/op	      27 allocs/op
+BenchmarkWordTokenizer-10                	  364641	      3313 ns/op	    5424 B/op	      27 allocs/op
+BenchmarkHyphenateWord-10                	 3435978	       348.3 ns/op	     192 B/op	       2 allocs/op
+BenchmarkHyphenateWord-10                	 3447868	       347.0 ns/op	     192 B/op	       2 allocs/op
+BenchmarkHyphenateWord-10                	 3465840	       351.6 ns/op	     192 B/op	       2 allocs/op
+BenchmarkHyphenateWord-10                	 3421774	       350.5 ns/op	     192 B/op	       2 allocs/op
+BenchmarkHyphenateWord-10                	 3428990	       352.5 ns/op	     192 B/op	       2 allocs/op
+BenchmarkXMLAwareSentenceTokenizer-10    	  255584	      4458 ns/op	    1875 B/op	      49 allocs/op
+BenchmarkXMLAwareSentenceTokenizer-10    	  270428	      4432 ns/op	    1874 B/op	      49 allocs/op
+BenchmarkXMLAwareSentenceTokenizer-10    	  270795	      4514 ns/op	    1876 B/op	      49 allocs/op
+BenchmarkXMLAwareSentenceTokenizer-10    	  249100	      4522 ns/op	    1874 B/op	      49 allocs/op
+BenchmarkXMLAwareSentenceTokenizer-10    	  259750	      4492 ns/op	    1874 B/op	      49 allocs/op
+PASS
+ok  	github.com/livekit/agents-go/tokenize	23.869s
+goos: darwin
+goarch: arm64
+pkg: github.com/livekit/agents-go/voice/backgroundaudio
+cpu: Apple M5
+BenchmarkMixerTwoStreams-10             	  157060	      8166 ns/op	   20054 B/op	       6 allocs/op
+BenchmarkMixerTwoStreams-10             	  169585	      8891 ns/op	   20029 B/op	       6 allocs/op
+BenchmarkMixerTwoStreams-10             	  110514	     11009 ns/op	   20020 B/op	       6 allocs/op
+BenchmarkMixerTwoStreams-10             	  164252	      7330 ns/op	   20039 B/op	       6 allocs/op
+BenchmarkMixerTwoStreams-10             	  175172	      7187 ns/op	   20020 B/op	       6 allocs/op
+BenchmarkNewBackgroundAudioPlayer-10    	 8075641	       142.7 ns/op	     600 B/op	       4 allocs/op
+BenchmarkNewBackgroundAudioPlayer-10    	 8532337	       141.4 ns/op	     600 B/op	       4 allocs/op
+BenchmarkNewBackgroundAudioPlayer-10    	 8479263	       141.3 ns/op	     600 B/op	       4 allocs/op
+BenchmarkNewBackgroundAudioPlayer-10    	 8440682	       141.7 ns/op	     600 B/op	       4 allocs/op
+BenchmarkNewBackgroundAudioPlayer-10    	 8499398	       141.7 ns/op	     600 B/op	       4 allocs/op
+BenchmarkMixerTwoStreamsImmediate-10    	  201703	      5624 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMixerTwoStreamsImmediate-10    	  220994	      5489 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMixerTwoStreamsImmediate-10    	  238587	      5466 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMixerTwoStreamsImmediate-10    	  212133	      5517 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMixerTwoStreamsImmediate-10    	  216236	      5614 ns/op	       0 B/op	       0 allocs/op
+BenchmarkFrameConverter48kMonoHot-10    	62961553	        16.59 ns/op	      64 B/op	       1 allocs/op
+BenchmarkFrameConverter48kMonoHot-10    	72416211	        16.57 ns/op	      64 B/op	       1 allocs/op
+BenchmarkFrameConverter48kMonoHot-10    	73196582	        16.60 ns/op	      64 B/op	       1 allocs/op
+BenchmarkFrameConverter48kMonoHot-10    	73650320	        16.60 ns/op	      64 B/op	       1 allocs/op
+BenchmarkFrameConverter48kMonoHot-10    	73204766	        16.72 ns/op	      64 B/op	       1 allocs/op
+BenchmarkFrameConverter48kMono-10       	 4331925	       275.5 ns/op	    2112 B/op	       2 allocs/op
+BenchmarkFrameConverter48kMono-10       	 4297011	       284.4 ns/op	    2112 B/op	       2 allocs/op
+BenchmarkFrameConverter48kMono-10       	 4338602	       276.4 ns/op	    2112 B/op	       2 allocs/op
+BenchmarkFrameConverter48kMono-10       	 4340874	       277.3 ns/op	    2112 B/op	       2 allocs/op
+BenchmarkFrameConverter48kMono-10       	 4306370	       278.6 ns/op	    2112 B/op	       2 allocs/op
+PASS
+ok  	github.com/livekit/agents-go/voice/backgroundaudio	30.486s
+goos: darwin
+goarch: arm64
+pkg: github.com/livekit/agents-go/voice/recorderio
+cpu: Apple M5
+BenchmarkRecorderConstruction-10    	25534902	        46.01 ns/op	     256 B/op	       1 allocs/op
+BenchmarkRecorderConstruction-10    	25978687	        45.57 ns/op	     256 B/op	       1 allocs/op
+BenchmarkRecorderConstruction-10    	26496207	        45.32 ns/op	     256 B/op	       1 allocs/op
+BenchmarkRecorderConstruction-10    	26735211	        45.54 ns/op	     256 B/op	       1 allocs/op
+BenchmarkRecorderConstruction-10    	26314754	        45.57 ns/op	     256 B/op	       1 allocs/op
+BenchmarkStereoMix48k100ms-10       	  142267	      8346 ns/op	   20480 B/op	       1 allocs/op
+BenchmarkStereoMix48k100ms-10       	  143985	      8366 ns/op	   20480 B/op	       1 allocs/op
+BenchmarkStereoMix48k100ms-10       	  143576	      8350 ns/op	   20480 B/op	       1 allocs/op
+BenchmarkStereoMix48k100ms-10       	  144067	      8344 ns/op	   20480 B/op	       1 allocs/op
+BenchmarkStereoMix48k100ms-10       	  143598	      8336 ns/op	   20480 B/op	       1 allocs/op
+BenchmarkMonoDownmix48k100ms-10     	  424998	      2684 ns/op	   20480 B/op	       1 allocs/op
+BenchmarkMonoDownmix48k100ms-10     	  455146	      2652 ns/op	   20480 B/op	       1 allocs/op
+BenchmarkMonoDownmix48k100ms-10     	  444003	      2654 ns/op	   20480 B/op	       1 allocs/op
+BenchmarkMonoDownmix48k100ms-10     	  447950	      2643 ns/op	   20480 B/op	       1 allocs/op
+BenchmarkMonoDownmix48k100ms-10     	  441493	      2663 ns/op	   20480 B/op	       1 allocs/op
+PASS
+ok  	github.com/livekit/agents-go/voice/recorderio	17.901s
