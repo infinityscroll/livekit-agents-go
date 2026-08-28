@@ -1,0 +1,226 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+defaults:
+  run:
+    shell: bash
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-go@b7ad1dad31e06c5925ef5d2fc7ad053ef454303e # v7.0.0
+        with:
+          go-version-file: go.mod
+          cache-dependency-path: go.sum
+      - name: Native audio dependencies
+        run: sudo apt-get update && sudo apt-get install -y libogg-dev libopus-dev libopusfile-dev libsoxr-dev pkg-config
+      - name: Module integrity
+        run: |
+          go mod tidy
+          git diff --exit-code -- go.mod go.sum
+          go mod verify
+      - name: Dependency and license policy
+        run: go run ./internal/cmd/depaudit -root .
+      - name: Public API contract
+        run: go test ./internal/apimanifest ./internal/paritymanifest
+      - name: Format
+        run: test -z "$(gofmt -l $(git ls-files '*.go'))"
+      - name: Vet
+        run: go vet ./...
+      - name: Static analysis
+        run: |
+          go install honnef.co/go/tools/cmd/staticcheck@v0.8.1
+          staticcheck ./...
+      - name: Unit and integration tests
+        run: go test -shuffle=on -count=1 ./...
+      - name: Race detector
+        run: go test -race -shuffle=on -count=1 ./...
+
+  fuzz:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-go@b7ad1dad31e06c5925ef5d2fc7ad053ef454303e # v7.0.0
+        with:
+          go-version-file: go.mod
+          cache-dependency-path: go.sum
+      - name: Parser and DSP fuzzers
+        run: |
+          go test ./tokenize -run '^$' -fuzz '^FuzzSentenceTokenizer$' -fuzztime 15s
+          go test ./tokenize -run '^$' -fuzz '^FuzzWordTokenizer$' -fuzztime 15s
+          go test ./tts -run '^$' -fuzz '^FuzzProviderMarkup$' -fuzztime 15s
+          go test ./tts -run '^$' -fuzz '^FuzzPCM16Resampler$' -fuzztime 15s
+          go test ./inference -run '^$' -fuzz '^FuzzInferenceEventDecoders$' -fuzztime 15s
+          go test ./inference -run '^$' -fuzz '^FuzzLinearMonoResampler$' -fuzztime 15s
+          go test ./inference -run '^$' -fuzz '^FuzzEstimateInterruptionProbability$' -fuzztime 15s
+          go test ./llm -run '^$' -fuzz '^FuzzParseFunctionArguments$' -fuzztime 15s
+          go test ./llm -run '^$' -fuzz '^FuzzThinkingTokenFilter$' -fuzztime 15s
+          go test ./llm/providerformat -run '^$' -fuzz '^FuzzGoogleFunctionArguments$' -fuzztime 15s
+          CGO_ENABLED=0 go test ./voice/backgroundaudio -run '^$' -fuzz '^FuzzFrameConverter$' -fuzztime 15s
+          CGO_ENABLED=0 go test ./voice/recorderio -run '^$' -fuzz '^FuzzSplitFramePreservesSamples$' -fuzztime 15s
+          CGO_ENABLED=0 go test ./voice/recorderio -run '^$' -fuzz '^FuzzMonoConverter$' -fuzztime 15s
+
+  performance-smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-go@b7ad1dad31e06c5925ef5d2fc7ad053ef454303e # v7.0.0
+        with:
+          go-version-file: go.mod
+          cache-dependency-path: go.sum
+      - name: Focused hot paths
+        env:
+          CGO_ENABLED: "0"
+        run: |
+          go test -p 1 -run '^$' -bench . -benchmem -benchtime 100ms ./inference ./stt ./tts ./tokenize ./voice/backgroundaudio ./voice/recorderio
+      - name: Fresh-process probes
+        env:
+          CGO_ENABLED: "0"
+        run: |
+          mkdir -p .bench
+          go build -trimpath -o .bench/core ./benchmarks/coldstart/core
+          go build -trimpath -o .bench/voice ./benchmarks/coldstart/voice
+          go build -trimpath -o .bench/elevenlabs ./benchmarks/coldstart/elevenlabs
+          go build -trimpath -o .bench/measure ./benchmarks/coldstart/measure
+          .bench/measure -binary "$PWD/.bench/core" -samples 25 -warmups 10
+          .bench/measure -binary "$PWD/.bench/voice" -samples 25 -warmups 10
+          .bench/measure -binary "$PWD/.bench/elevenlabs" -samples 25 -warmups 10
+
+  cross-build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - goos: linux
+            goarch: arm64
+          - goos: darwin
+            goarch: arm64
+          - goos: windows
+            goarch: amd64
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-go@b7ad1dad31e06c5925ef5d2fc7ad053ef454303e # v7.0.0
+        with:
+          go-version-file: go.mod
+          cache-dependency-path: go.sum
+      - name: Compile portable packages
+        env:
+          CGO_ENABLED: "0"
+          GOOS: ${{ matrix.goos }}
+          GOARCH: ${{ matrix.goarch }}
+        run: |
+          go test -exec=true -run '^$' . ./agentscli ./inference ./ipc ./llm ./metrics ./plugins/elevenlabs ./stream ./stt ./telemetry ./tokenize ./transcription ./tts ./vad ./voice ./voice/avatar ./voice/backgroundaudio ./voice/recorderio ./workflows ./beta/... ./internal/cmd/depaudit
+
+  vulnerability-scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-go@b7ad1dad31e06c5925ef5d2fc7ad053ef454303e # v7.0.0
+        with:
+          go-version-file: go.mod
+          cache-dependency-path: go.sum
+      - name: Native audio dependencies
+        run: sudo apt-get update && sudo apt-get install -y libogg-dev libopus-dev libopusfile-dev libsoxr-dev pkg-config
+      - run: go install golang.org/x/vuln/cmd/govulncheck@v1.7.0
+      - run: govulncheck ./...
+
+  release:
+    if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags/v')
+    needs:
+      - test
+      - fuzz
+      - performance-smoke
+      - cross-build
+      - vulnerability-scan
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: write
+      id-token: write
+      attestations: write
+      artifact-metadata: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-go@b7ad1dad31e06c5925ef5d2fc7ad053ef454303e # v7.0.0
+        with:
+          go-version-file: go.mod
+          cache-dependency-path: go.sum
+      - name: Verify tag and module
+        run: |
+          test "${GITHUB_REF_NAME}" = "v$(go run ./internal/releaseversion)"
+          go mod tidy
+          git diff --exit-code -- go.mod go.sum
+          go mod verify
+      - name: Source archive
+        run: |
+          mkdir -p dist
+          git archive --format=tar.gz --prefix="livekit-agents-go-${GITHUB_REF_NAME}/" -o "dist/livekit-agents-go-${GITHUB_REF_NAME}.tar.gz" HEAD
+      - uses: anchore/sbom-action@e22c389904149dbc22b58101806040fa8d37a610 # v0.24.0
+        with:
+          path: .
+          format: spdx-json
+          output-file: dist/livekit-agents-go.spdx.json
+          upload-artifact: false
+      - name: Capture release performance evidence
+        env:
+          CGO_ENABLED: "0"
+        run: |
+          mkdir -p .bench
+          go test -p 1 -run '^$' -bench . -benchmem -count 3 ./inference ./stt ./tts ./tokenize ./voice/backgroundaudio ./voice/recorderio | tee dist/hot-path-benchmarks.txt
+          go build -trimpath -o .bench/core ./benchmarks/coldstart/core
+          go build -trimpath -o .bench/voice ./benchmarks/coldstart/voice
+          go build -trimpath -o .bench/elevenlabs ./benchmarks/coldstart/elevenlabs
+          go build -trimpath -o .bench/measure ./benchmarks/coldstart/measure
+          .bench/measure -json -binary "$PWD/.bench/core" -samples 100 -warmups 10 > dist/cold-core.json
+          .bench/measure -json -binary "$PWD/.bench/voice" -samples 100 -warmups 10 > dist/cold-voice.json
+          .bench/measure -json -binary "$PWD/.bench/elevenlabs" -samples 100 -warmups 10 > dist/cold-elevenlabs.json
+          {
+            git rev-parse HEAD
+            go version
+            uname -a
+            sha256sum go.mod go.sum docs/api-manifest.json docs/parity-manifest.json
+            stat --format='%n %s bytes' .bench/core .bench/voice .bench/elevenlabs
+            /usr/bin/time -v .bench/core
+            /usr/bin/time -v .bench/voice
+            /usr/bin/time -v .bench/elevenlabs
+          } > dist/performance-metadata.txt 2>&1
+      - name: Artifact checksums
+        run: cd dist && sha256sum * > SHA256SUMS
+      - uses: actions/attest@1e69f48acb82d1966a394da916b4c1698aa569d6 # v4.2.2
+        with:
+          subject-path: dist/*
+      - uses: softprops/action-gh-release@3d0d9888cb7fd7b750713d6e236d1fcb99157228 # v3.0.2
+        with:
+          generate_release_notes: true
+          files: dist/*

@@ -1,0 +1,69 @@
+name: Performance
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - "**.go"
+      - "go.mod"
+      - "go.sum"
+      - "benchmarks/**"
+      - ".github/workflows/benchmark.yml"
+
+permissions:
+  contents: read
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  benchmark:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      CGO_ENABLED: "0"
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-go@b7ad1dad31e06c5925ef5d2fc7ad053ef454303e # v7.0.0
+        with:
+          go-version-file: go.mod
+          cache-dependency-path: go.sum
+      - name: Hot-path benchmarks
+        run: |
+          mkdir -p .benchmark-results
+          go test -p 1 -run '^$' -bench . -benchmem -count 5 ./inference ./stt ./tts ./tokenize ./voice/backgroundaudio ./voice/recorderio | tee .benchmark-results/hot-path.txt
+      - name: Fresh-process cold start
+        run: |
+          mkdir -p .benchmark-results/bin
+          go build -trimpath -o .benchmark-results/bin/core ./benchmarks/coldstart/core
+          go build -trimpath -o .benchmark-results/bin/voice ./benchmarks/coldstart/voice
+          go build -trimpath -o .benchmark-results/bin/elevenlabs ./benchmarks/coldstart/elevenlabs
+          go build -trimpath -o .benchmark-results/bin/measure ./benchmarks/coldstart/measure
+          .benchmark-results/bin/measure -json -binary "$PWD/.benchmark-results/bin/core" -samples 100 -warmups 10 | tee .benchmark-results/cold-core.json
+          .benchmark-results/bin/measure -json -binary "$PWD/.benchmark-results/bin/voice" -samples 100 -warmups 10 | tee .benchmark-results/cold-voice.json
+          .benchmark-results/bin/measure -json -binary "$PWD/.benchmark-results/bin/elevenlabs" -samples 100 -warmups 10 | tee .benchmark-results/cold-elevenlabs.json
+      - name: Build and source metadata
+        run: |
+          {
+            git rev-parse HEAD
+            go version
+            uname -a
+            sha256sum go.mod go.sum docs/api-manifest.json docs/parity-manifest.json
+            stat --format='%n %s bytes' .benchmark-results/bin/core .benchmark-results/bin/voice .benchmark-results/bin/elevenlabs
+            /usr/bin/time -v .benchmark-results/bin/core
+            /usr/bin/time -v .benchmark-results/bin/voice
+            /usr/bin/time -v .benchmark-results/bin/elevenlabs
+          } > .benchmark-results/metadata.txt 2>&1
+      - uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
+        with:
+          name: performance-${{ github.sha }}
+          path: |
+            .benchmark-results/*.txt
+            .benchmark-results/*.json
+          if-no-files-found: error
+          retention-days: 90

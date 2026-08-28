@@ -1,0 +1,9 @@
+LiveKit Agents Go
+Copyright 2026
+
+This product includes behavior and API design derived from the Apache-2.0
+licensed LiveKit Agents JavaScript and Python projects.
+
+The embedded background-audio resources are byte-identical Apache-2.0 assets
+from livekit/agents-js 1.7.1. Their immutable source revision and checksums are
+recorded in voice/backgroundaudio/resources/NOTICE.md.

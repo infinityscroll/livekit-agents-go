@@ -1,0 +1,12 @@
+/.cache/
+/.bench/
+/.benchmark-results/
+/.coverage/
+/.idea/
+/.vscode/
+/bin/
+/dist/
+/console-recordings/
+*.out
+*.prof
+*.test
