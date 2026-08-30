@@ -59,6 +59,11 @@ attaches its sequential hot-path output, per-process cold samples, source
 revision and contract hashes, binary sizes, and peak-RSS metadata alongside the
 source archive.
 
+The checked Apple M5 capture predates the public module relocation to
+`github.com/infinityscroll/livekit-agents-go`. Its raw package labels and
+hashes are intentionally preserved rather than rewritten; tagged-release CI
+collects current-revision evidence independently.
+
 ### Cold process start
 
 The three probes in [`benchmarks/coldstart`](../benchmarks/coldstart) retain a

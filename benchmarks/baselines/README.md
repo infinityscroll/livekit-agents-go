@@ -13,8 +13,11 @@ The `apple-m5-darwin-arm64-go1.27` baseline measures source commit
 - `metadata.txt`: source-contract hashes, exact build flags, OS/CPU/toolchain,
   binary sizes and hashes, and raw peak-RSS output.
 
-The release tag adds only this evidence and its corresponding documentation to
-the measured source revision. Tag releases generate the same artifact shapes
+This capture predates the public repository move to
+`github.com/infinityscroll/livekit-agents-go`. Its package paths, source
+contract hashes, and binary hashes remain byte-for-byte historical evidence;
+they are not text-rewritten to resemble a measurement that did not occur.
+Tag releases generate the same artifact shapes from the exact tagged revision
 on their runner and attach them permanently to the release.
 
 Validate the cold files with `jq`, and use `benchstat` on compatible
