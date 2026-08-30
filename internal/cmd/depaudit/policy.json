@@ -184,7 +184,7 @@
     },
     {
       "path": "google.golang.org/protobuf",
-      "version": "v1.36.11",
+      "version": "v1.36.12",
       "license": "BSD-3-Clause",
       "source_url": "https://github.com/protocolbuffers/protobuf-go",
       "license_files": [

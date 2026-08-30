@@ -1,7 +1,7 @@
 # Dependencies, licensing, and release provenance
 
 This document records the dependency and licensing review for the module graph
-resolved on 2026-08-29. It is an engineering release control, not legal advice.
+resolved on 2026-08-31. It is an engineering release control, not legal advice.
 The authoritative evidence is each downloaded module's own root `LICENSE`,
 `LICENCE`, `COPYING`, or `UNLICENSE` file. SPDX identifiers are not inferred
 from repository badges, package-index metadata, or memory.
@@ -110,7 +110,7 @@ Changing any of those fields requires an explicit policy review.
 | `go.opentelemetry.io/otel/trace` | `v1.44.0` | Apache-2.0 AND BSD-3-Clause | [source](https://github.com/open-telemetry/opentelemetry-go) |
 | `go.opentelemetry.io/proto/otlp` | `v1.10.0` | Apache-2.0 | [source](https://github.com/open-telemetry/opentelemetry-proto-go) |
 | `google.golang.org/genproto/googleapis/rpc` | `v0.0.0-20260526163538-3dc84a4a5aaa` | Apache-2.0 | [source](https://github.com/googleapis/go-genproto) |
-| `google.golang.org/protobuf` | `v1.36.11` | BSD-3-Clause | [source](https://github.com/protocolbuffers/protobuf-go) |
+| `google.golang.org/protobuf` | `v1.36.12` | BSD-3-Clause | [source](https://github.com/protocolbuffers/protobuf-go) |
 
 ## Native and system dependencies
 
