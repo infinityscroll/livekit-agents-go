@@ -13,10 +13,10 @@ import (
 	"sync"
 	"time"
 
-	agents "github.com/livekit/agents-go"
-	"github.com/livekit/agents-go/llm"
-	"github.com/livekit/agents-go/stream"
-	"github.com/livekit/agents-go/tts"
+	agents "github.com/infinityscroll/livekit-agents-go"
+	"github.com/infinityscroll/livekit-agents-go/llm"
+	"github.com/infinityscroll/livekit-agents-go/stream"
+	"github.com/infinityscroll/livekit-agents-go/tts"
 )
 
 const maxGeneratedTextBytes = 4 << 20

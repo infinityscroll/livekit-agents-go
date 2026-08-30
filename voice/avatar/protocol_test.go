@@ -7,7 +7,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/livekit/agents-go/voice"
+	"github.com/infinityscroll/livekit-agents-go/voice"
 )
 
 func TestParsePlaybackFinishedPayloadNeverThrowsAndNormalizesKeys(t *testing.T) {

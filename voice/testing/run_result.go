@@ -12,7 +12,7 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/livekit/agents-go/llm"
+	"github.com/infinityscroll/livekit-agents-go/llm"
 )
 
 type EventType string

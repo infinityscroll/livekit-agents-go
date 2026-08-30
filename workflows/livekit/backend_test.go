@@ -8,7 +8,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/livekit/agents-go/voice/roomio"
+	"github.com/infinityscroll/livekit-agents-go/voice/roomio"
 	lksdk "github.com/livekit/server-sdk-go/v2"
 )
 

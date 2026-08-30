@@ -14,7 +14,7 @@ import (
 	"strconv"
 	"sync"
 
-	agents "github.com/livekit/agents-go"
+	agents "github.com/infinityscroll/livekit-agents-go"
 )
 
 func (r *RecorderIO) runEncoder(ctx context.Context, queue *batchQueue, outputPath string) {

@@ -10,8 +10,8 @@ import (
 	"time"
 	"unicode/utf8"
 
-	agents "github.com/livekit/agents-go"
-	"github.com/livekit/agents-go/tokenize"
+	agents "github.com/infinityscroll/livekit-agents-go"
+	"github.com/infinityscroll/livekit-agents-go/tokenize"
 )
 
 type providerAlignment struct {

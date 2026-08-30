@@ -6,7 +6,7 @@ import (
 	"context"
 	"fmt"
 
-	backgroundaudio "github.com/livekit/agents-go/voice/backgroundaudio"
+	backgroundaudio "github.com/infinityscroll/livekit-agents-go/voice/backgroundaudio"
 )
 
 func ExampleNewBackgroundAudioPlayer() {

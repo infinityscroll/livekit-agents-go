@@ -8,8 +8,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/livekit/agents-go/metrics"
-	"github.com/livekit/agents-go/tokenize"
+	"github.com/infinityscroll/livekit-agents-go/metrics"
+	"github.com/infinityscroll/livekit-agents-go/tokenize"
 )
 
 func TestStreamAdapterSynthesizesSentencesInOrder(t *testing.T) {

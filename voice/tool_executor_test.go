@@ -11,7 +11,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/livekit/agents-go/llm"
+	"github.com/infinityscroll/livekit-agents-go/llm"
 )
 
 type toolArgs struct {

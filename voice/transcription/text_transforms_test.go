@@ -9,7 +9,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/livekit/agents-go/stream"
+	"github.com/infinityscroll/livekit-agents-go/stream"
 )
 
 func chunked(value string, size int) stream.Reader[string] {

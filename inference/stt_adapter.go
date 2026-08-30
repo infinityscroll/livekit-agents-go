@@ -15,9 +15,9 @@ import (
 	"time"
 
 	"github.com/gorilla/websocket"
-	agents "github.com/livekit/agents-go"
-	"github.com/livekit/agents-go/metrics"
-	"github.com/livekit/agents-go/stt"
+	agents "github.com/infinityscroll/livekit-agents-go"
+	"github.com/infinityscroll/livekit-agents-go/metrics"
+	"github.com/infinityscroll/livekit-agents-go/stt"
 )
 
 const (

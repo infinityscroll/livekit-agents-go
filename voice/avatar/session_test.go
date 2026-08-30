@@ -8,9 +8,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/livekit/agents-go/llm"
-	"github.com/livekit/agents-go/metrics"
-	"github.com/livekit/agents-go/voice"
+	"github.com/infinityscroll/livekit-agents-go/llm"
+	"github.com/infinityscroll/livekit-agents-go/metrics"
+	"github.com/infinityscroll/livekit-agents-go/voice"
 	lksdk "github.com/livekit/server-sdk-go/v2"
 )
 

@@ -10,9 +10,9 @@ import (
 	"path/filepath"
 	"strconv"
 
-	agents "github.com/livekit/agents-go"
-	"github.com/livekit/agents-go/voice"
-	"github.com/livekit/agents-go/voice/recorderio"
+	agents "github.com/infinityscroll/livekit-agents-go"
+	"github.com/infinityscroll/livekit-agents-go/voice"
+	"github.com/infinityscroll/livekit-agents-go/voice/recorderio"
 )
 
 // NewConsoleRunner returns the built-in in-process console runner. The

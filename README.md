@@ -17,7 +17,7 @@ Providers are isolated in subpackages so unused integrations do not affect
 binary size or process startup. The only bundled provider is ElevenLabs.
 
 ```sh
-go get github.com/livekit/agents-go@v0.1.0
+go get github.com/infinityscroll/livekit-agents-go@v0.1.0
 ```
 
 ## Production voice agent
@@ -29,11 +29,11 @@ import (
     "context"
     "os"
 
-    agents "github.com/livekit/agents-go"
-    "github.com/livekit/agents-go/agentscli"
-    "github.com/livekit/agents-go/llm"
-    "github.com/livekit/agents-go/voice"
-    voicekit "github.com/livekit/agents-go/voice/livekit"
+    agents "github.com/infinityscroll/livekit-agents-go"
+    "github.com/infinityscroll/livekit-agents-go/agentscli"
+    "github.com/infinityscroll/livekit-agents-go/llm"
+    "github.com/infinityscroll/livekit-agents-go/voice"
+    voicekit "github.com/infinityscroll/livekit-agents-go/voice/livekit"
 )
 
 func main() {

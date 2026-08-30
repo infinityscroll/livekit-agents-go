@@ -15,7 +15,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/livekit/agents-go/stream"
+	"github.com/infinityscroll/livekit-agents-go/stream"
 )
 
 const (

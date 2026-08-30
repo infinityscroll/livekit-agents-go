@@ -7,8 +7,8 @@ import (
 	"strings"
 	"testing"
 
-	agents "github.com/livekit/agents-go"
-	"github.com/livekit/agents-go/llm"
+	agents "github.com/infinityscroll/livekit-agents-go"
+	"github.com/infinityscroll/livekit-agents-go/llm"
 )
 
 func TestRealtimeAndChatModelSelectionIsMutuallyExclusive(t *testing.T) {

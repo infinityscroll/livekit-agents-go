@@ -8,10 +8,10 @@ import (
 	"testing"
 	"time"
 
-	agents "github.com/livekit/agents-go"
-	"github.com/livekit/agents-go/llm"
-	"github.com/livekit/agents-go/stream"
-	"github.com/livekit/agents-go/vad"
+	agents "github.com/infinityscroll/livekit-agents-go"
+	"github.com/infinityscroll/livekit-agents-go/llm"
+	"github.com/infinityscroll/livekit-agents-go/stream"
+	"github.com/infinityscroll/livekit-agents-go/vad"
 )
 
 func disableVAD() agents.Override[vad.VAD] { return agents.Disable[vad.VAD]() }

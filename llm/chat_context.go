@@ -11,7 +11,7 @@ import (
 	"sync"
 	"time"
 
-	agents "github.com/livekit/agents-go"
+	agents "github.com/infinityscroll/livekit-agents-go"
 )
 
 type ChatRole string

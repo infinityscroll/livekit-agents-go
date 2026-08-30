@@ -19,7 +19,7 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/livekit/agents-go/internal/workerprotocol"
+	"github.com/infinityscroll/livekit-agents-go/internal/workerprotocol"
 	"github.com/livekit/protocol/auth"
 	"github.com/livekit/protocol/livekit"
 	lksdk "github.com/livekit/server-sdk-go/v2"

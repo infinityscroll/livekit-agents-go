@@ -10,7 +10,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/livekit/agents-go/ipc"
+	"github.com/infinityscroll/livekit-agents-go/ipc"
 )
 
 type executorTestRunner struct {

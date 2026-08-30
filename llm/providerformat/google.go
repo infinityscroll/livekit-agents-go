@@ -6,7 +6,7 @@ import (
 	"encoding/json"
 	"fmt"
 
-	"github.com/livekit/agents-go/llm"
+	"github.com/infinityscroll/livekit-agents-go/llm"
 )
 
 // GoogleFormatData carries system instructions that Gemini accepts separately

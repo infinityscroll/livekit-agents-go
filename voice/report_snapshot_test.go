@@ -7,7 +7,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/livekit/agents-go/inference"
+	"github.com/infinityscroll/livekit-agents-go/inference"
 )
 
 func TestFreezeReportEventSeversMutablePayload(t *testing.T) {

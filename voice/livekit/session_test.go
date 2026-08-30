@@ -13,11 +13,11 @@ import (
 	"testing"
 	"time"
 
-	agents "github.com/livekit/agents-go"
-	"github.com/livekit/agents-go/llm"
-	"github.com/livekit/agents-go/voice"
-	"github.com/livekit/agents-go/voice/recorderio"
-	"github.com/livekit/agents-go/voice/roomio"
+	agents "github.com/infinityscroll/livekit-agents-go"
+	"github.com/infinityscroll/livekit-agents-go/llm"
+	"github.com/infinityscroll/livekit-agents-go/voice"
+	"github.com/infinityscroll/livekit-agents-go/voice/recorderio"
+	"github.com/infinityscroll/livekit-agents-go/voice/roomio"
 	agentpb "github.com/livekit/protocol/livekit/agent"
 )
 

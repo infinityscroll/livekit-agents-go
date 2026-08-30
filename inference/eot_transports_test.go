@@ -14,8 +14,8 @@ import (
 	"time"
 
 	"github.com/gorilla/websocket"
-	agents "github.com/livekit/agents-go"
-	"github.com/livekit/agents-go/metrics"
+	agents "github.com/infinityscroll/livekit-agents-go"
+	"github.com/infinityscroll/livekit-agents-go/metrics"
 	protocol "github.com/livekit/protocol/livekit/agent"
 	"google.golang.org/protobuf/proto"
 	"google.golang.org/protobuf/types/known/durationpb"

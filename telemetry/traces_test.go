@@ -10,7 +10,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/livekit/agents-go/metrics"
+	"github.com/infinityscroll/livekit-agents-go/metrics"
 	"go.opentelemetry.io/otel/attribute"
 	"go.opentelemetry.io/otel/codes"
 	"go.opentelemetry.io/otel/trace"

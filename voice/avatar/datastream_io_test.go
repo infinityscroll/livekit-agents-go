@@ -11,7 +11,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/livekit/agents-go/voice"
+	"github.com/infinityscroll/livekit-agents-go/voice"
 	lksdk "github.com/livekit/server-sdk-go/v2"
 )
 

@@ -12,8 +12,8 @@ import (
 	"sync/atomic"
 	"time"
 
-	agents "github.com/livekit/agents-go"
-	"github.com/livekit/agents-go/voice"
+	agents "github.com/infinityscroll/livekit-agents-go"
+	"github.com/infinityscroll/livekit-agents-go/voice"
 	lksdk "github.com/livekit/server-sdk-go/v2"
 )
 

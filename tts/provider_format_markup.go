@@ -10,7 +10,7 @@ import (
 	"unicode"
 	"unicode/utf8"
 
-	agents "github.com/livekit/agents-go"
+	agents "github.com/infinityscroll/livekit-agents-go"
 )
 
 const maxHeldMarkupChars = 64 << 10

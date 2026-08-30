@@ -11,7 +11,7 @@ import (
 	"sync"
 	"time"
 
-	agents "github.com/livekit/agents-go"
+	agents "github.com/infinityscroll/livekit-agents-go"
 	agentpb "github.com/livekit/protocol/livekit/agent"
 	"google.golang.org/protobuf/proto"
 )

@@ -5,7 +5,7 @@ package main
 import (
 	"runtime"
 
-	agents "github.com/livekit/agents-go"
+	agents "github.com/infinityscroll/livekit-agents-go"
 )
 
 // Retain the representative worker constructor without starting a worker.

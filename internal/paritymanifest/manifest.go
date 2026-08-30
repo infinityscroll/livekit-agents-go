@@ -16,7 +16,7 @@ const (
 	SchemaVersion               = 1
 	TypeScriptRevision          = "128f3f6a230616e960325b112067861ce1f1a17f"
 	PythonRevision              = "cdb37ade6f8e80822e6c5ec4e6de457f2dcaf637"
-	GoModule                    = "github.com/livekit/agents-go"
+	GoModule                    = "github.com/infinityscroll/livekit-agents-go"
 	GoAPIManifest               = "docs/api-manifest.json"
 	TypeScriptExports           = 1093
 	PythonExports               = 472

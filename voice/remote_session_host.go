@@ -12,8 +12,8 @@ import (
 	"sync"
 	"time"
 
-	agents "github.com/livekit/agents-go"
-	"github.com/livekit/agents-go/stream"
+	agents "github.com/infinityscroll/livekit-agents-go"
+	"github.com/infinityscroll/livekit-agents-go/stream"
 	agentpb "github.com/livekit/protocol/livekit/agent"
 	"google.golang.org/protobuf/types/known/structpb"
 )

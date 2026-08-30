@@ -10,8 +10,8 @@ import (
 	"sync"
 	"sync/atomic"
 
-	agents "github.com/livekit/agents-go"
-	"github.com/livekit/agents-go/tts"
+	agents "github.com/infinityscroll/livekit-agents-go"
+	"github.com/infinityscroll/livekit-agents-go/tts"
 )
 
 type TTS struct {

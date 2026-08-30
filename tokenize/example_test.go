@@ -5,7 +5,7 @@ package tokenize_test
 import (
 	"fmt"
 
-	"github.com/livekit/agents-go/tokenize"
+	"github.com/infinityscroll/livekit-agents-go/tokenize"
 )
 
 func ExampleSentenceTokenizer() {

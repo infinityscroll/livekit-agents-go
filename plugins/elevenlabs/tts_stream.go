@@ -10,10 +10,10 @@ import (
 	"time"
 	"unicode/utf8"
 
-	agents "github.com/livekit/agents-go"
-	"github.com/livekit/agents-go/metrics"
-	"github.com/livekit/agents-go/tokenize"
-	"github.com/livekit/agents-go/tts"
+	agents "github.com/infinityscroll/livekit-agents-go"
+	"github.com/infinityscroll/livekit-agents-go/metrics"
+	"github.com/infinityscroll/livekit-agents-go/tokenize"
+	"github.com/infinityscroll/livekit-agents-go/tts"
 )
 
 type SynthesizeStream struct {

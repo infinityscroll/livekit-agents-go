@@ -9,7 +9,7 @@ import (
 	"errors"
 	"testing"
 
-	agents "github.com/livekit/agents-go"
+	agents "github.com/infinityscroll/livekit-agents-go"
 	lksdk "github.com/livekit/server-sdk-go/v2"
 )
 

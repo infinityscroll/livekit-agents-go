@@ -12,7 +12,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/livekit/agents-go/ipc"
+	"github.com/infinityscroll/livekit-agents-go/ipc"
 )
 
 const DefaultInferenceInitializeTimeout = 5 * time.Minute

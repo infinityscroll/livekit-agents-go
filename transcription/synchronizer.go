@@ -15,9 +15,9 @@ import (
 	"sync/atomic"
 	"time"
 
-	agents "github.com/livekit/agents-go"
-	"github.com/livekit/agents-go/stream"
-	"github.com/livekit/agents-go/tokenize"
+	agents "github.com/infinityscroll/livekit-agents-go"
+	"github.com/infinityscroll/livekit-agents-go/stream"
+	"github.com/infinityscroll/livekit-agents-go/tokenize"
 	livekit "github.com/livekit/protocol/livekit"
 )
 

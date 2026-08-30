@@ -8,7 +8,7 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/livekit/agents-go/internal/apimanifest"
+	"github.com/infinityscroll/livekit-agents-go/internal/apimanifest"
 )
 
 func main() {

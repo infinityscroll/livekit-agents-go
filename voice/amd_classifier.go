@@ -15,8 +15,8 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/livekit/agents-go/llm"
-	"github.com/livekit/agents-go/stt"
+	"github.com/infinityscroll/livekit-agents-go/llm"
+	"github.com/infinityscroll/livekit-agents-go/stt"
 	"go.opentelemetry.io/otel/trace"
 )
 

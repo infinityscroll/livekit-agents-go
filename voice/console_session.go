@@ -9,7 +9,7 @@ import (
 	"sync"
 	"time"
 
-	agents "github.com/livekit/agents-go"
+	agents "github.com/infinityscroll/livekit-agents-go"
 )
 
 // acquireDefaultConsoleIO is the only console-mode branch on the normal

@@ -10,7 +10,7 @@ import (
 	"strings"
 	"sync"
 
-	agents "github.com/livekit/agents-go"
+	agents "github.com/infinityscroll/livekit-agents-go"
 )
 
 // TurnDetectorModel is the model identifier reported in metrics and usage.

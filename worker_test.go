@@ -13,7 +13,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/livekit/agents-go/internal/workerprotocol"
+	"github.com/infinityscroll/livekit-agents-go/internal/workerprotocol"
 	"github.com/livekit/protocol/livekit"
 	"google.golang.org/protobuf/proto"
 )

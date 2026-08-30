@@ -1,16 +1,16 @@
 // SPDX-License-Identifier: Apache-2.0
 
 // Package beta retains the temporary agents-js compatibility surface. Stable
-// workflows should be imported from github.com/livekit/agents-go/workflows.
+// workflows should be imported from github.com/infinityscroll/livekit-agents-go/workflows.
 package beta
 
 import (
 	"context"
 
-	agents "github.com/livekit/agents-go"
-	betatools "github.com/livekit/agents-go/beta/tools"
-	"github.com/livekit/agents-go/llm"
-	stable "github.com/livekit/agents-go/workflows"
+	agents "github.com/infinityscroll/livekit-agents-go"
+	betatools "github.com/infinityscroll/livekit-agents-go/beta/tools"
+	"github.com/infinityscroll/livekit-agents-go/llm"
+	stable "github.com/infinityscroll/livekit-agents-go/workflows"
 )
 
 type Instructions = llm.Instructions

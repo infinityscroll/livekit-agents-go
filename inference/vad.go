@@ -13,10 +13,10 @@ import (
 	"sync"
 	"time"
 
-	agents "github.com/livekit/agents-go"
-	"github.com/livekit/agents-go/ipc"
-	"github.com/livekit/agents-go/metrics"
-	vadpkg "github.com/livekit/agents-go/vad"
+	agents "github.com/infinityscroll/livekit-agents-go"
+	"github.com/infinityscroll/livekit-agents-go/ipc"
+	"github.com/infinityscroll/livekit-agents-go/metrics"
+	vadpkg "github.com/infinityscroll/livekit-agents-go/vad"
 )
 
 // Inference VAD protocol and production defaults.

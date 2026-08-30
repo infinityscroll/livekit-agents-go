@@ -10,9 +10,9 @@ import (
 	"testing"
 	"time"
 
-	agents "github.com/livekit/agents-go"
-	"github.com/livekit/agents-go/ipc"
-	vadpkg "github.com/livekit/agents-go/vad"
+	agents "github.com/infinityscroll/livekit-agents-go"
+	"github.com/infinityscroll/livekit-agents-go/ipc"
+	vadpkg "github.com/infinityscroll/livekit-agents-go/vad"
 )
 
 func TestInferenceVADUsesExecutorFromContext(t *testing.T) {

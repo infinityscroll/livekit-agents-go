@@ -18,10 +18,10 @@ import (
 	"time"
 
 	"github.com/gorilla/websocket"
-	agents "github.com/livekit/agents-go"
-	"github.com/livekit/agents-go/ipc"
-	"github.com/livekit/agents-go/metrics"
-	"github.com/livekit/agents-go/stream"
+	agents "github.com/infinityscroll/livekit-agents-go"
+	"github.com/infinityscroll/livekit-agents-go/ipc"
+	"github.com/infinityscroll/livekit-agents-go/metrics"
+	"github.com/infinityscroll/livekit-agents-go/stream"
 )
 
 // Audio end-of-turn protocol and production defaults.

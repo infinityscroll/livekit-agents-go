@@ -13,10 +13,10 @@ import (
 	"testing"
 	"time"
 
-	agents "github.com/livekit/agents-go"
-	"github.com/livekit/agents-go/llm"
-	"github.com/livekit/agents-go/metrics"
-	"github.com/livekit/agents-go/stt"
+	agents "github.com/infinityscroll/livekit-agents-go"
+	"github.com/infinityscroll/livekit-agents-go/llm"
+	"github.com/infinityscroll/livekit-agents-go/metrics"
+	"github.com/infinityscroll/livekit-agents-go/stt"
 )
 
 type keytermTestSTT struct {

@@ -9,8 +9,8 @@ import (
 	"context"
 	"errors"
 
-	"github.com/livekit/agents-go/voice/avatar"
-	"github.com/livekit/agents-go/voice/roomio"
+	"github.com/infinityscroll/livekit-agents-go/voice/avatar"
+	"github.com/infinityscroll/livekit-agents-go/voice/roomio"
 	lksdk "github.com/livekit/server-sdk-go/v2"
 )
 

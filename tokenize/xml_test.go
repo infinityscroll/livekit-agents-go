@@ -10,7 +10,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/livekit/agents-go/tokenize"
+	"github.com/infinityscroll/livekit-agents-go/tokenize"
 )
 
 func TestHasUnclosedXMLTags(t *testing.T) {

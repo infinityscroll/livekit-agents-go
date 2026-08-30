@@ -10,7 +10,7 @@ import (
 	"sync"
 	"sync/atomic"
 
-	agents "github.com/livekit/agents-go"
+	agents "github.com/infinityscroll/livekit-agents-go"
 	mediabase "github.com/livekit/media-sdk"
 	"github.com/livekit/protocol/livekit"
 	lksdk "github.com/livekit/server-sdk-go/v2"

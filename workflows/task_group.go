@@ -13,8 +13,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/livekit/agents-go/llm"
-	"github.com/livekit/agents-go/voice"
+	"github.com/infinityscroll/livekit-agents-go/llm"
+	"github.com/infinityscroll/livekit-agents-go/voice"
 )
 
 const DefaultTaskGroupMaxExecutions = 1024

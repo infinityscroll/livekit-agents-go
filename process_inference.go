@@ -11,8 +11,8 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/livekit/agents-go/internal/workerprotocol"
-	"github.com/livekit/agents-go/ipc"
+	"github.com/infinityscroll/livekit-agents-go/internal/workerprotocol"
+	"github.com/infinityscroll/livekit-agents-go/ipc"
 )
 
 const jobInferenceConcurrency = 64

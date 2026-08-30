@@ -7,8 +7,8 @@ import (
 	"errors"
 	"testing"
 
-	"github.com/livekit/agents-go/llm"
-	voicetest "github.com/livekit/agents-go/voice/testing"
+	"github.com/infinityscroll/livekit-agents-go/llm"
+	voicetest "github.com/infinityscroll/livekit-agents-go/voice/testing"
 )
 
 func TestAgentSessionRunRecordsTurnAndRejectsNestedRun(t *testing.T) {

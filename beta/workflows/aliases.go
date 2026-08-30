@@ -1,10 +1,10 @@
 // SPDX-License-Identifier: Apache-2.0
 
 // Package workflows contains deprecated compatibility aliases. Import the
-// stable github.com/livekit/agents-go/workflows package in new code.
+// stable github.com/infinityscroll/livekit-agents-go/workflows package in new code.
 package workflows
 
-import stable "github.com/livekit/agents-go/workflows"
+import stable "github.com/infinityscroll/livekit-agents-go/workflows"
 
 type Task = stable.Task
 type TaskFactory = stable.TaskFactory

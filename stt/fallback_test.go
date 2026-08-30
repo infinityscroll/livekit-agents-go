@@ -11,8 +11,8 @@ import (
 	"testing"
 	"time"
 
-	agents "github.com/livekit/agents-go"
-	"github.com/livekit/agents-go/metrics"
+	agents "github.com/infinityscroll/livekit-agents-go"
+	"github.com/infinityscroll/livekit-agents-go/metrics"
 )
 
 type adapterTestSTT struct {

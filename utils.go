@@ -11,7 +11,7 @@ import (
 	"strings"
 	"unicode"
 
-	"github.com/livekit/agents-go/rtcbridge"
+	"github.com/infinityscroll/livekit-agents-go/rtcbridge"
 	lksdk "github.com/livekit/server-sdk-go/v2"
 )
 

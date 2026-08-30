@@ -14,8 +14,8 @@ import (
 	"time"
 
 	"github.com/gorilla/websocket"
-	agents "github.com/livekit/agents-go"
-	"github.com/livekit/agents-go/stt"
+	agents "github.com/infinityscroll/livekit-agents-go"
+	"github.com/infinityscroll/livekit-agents-go/stt"
 )
 
 var testUpgrader = websocket.Upgrader{CheckOrigin: func(*http.Request) bool { return true }}

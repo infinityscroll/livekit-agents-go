@@ -14,21 +14,21 @@ behavior while translating those language mechanisms into normal Go.
 
 | TypeScript / Python | Go |
 |---|---|
-| `@livekit/agents` / `livekit.agents` | `github.com/livekit/agents-go` |
-| `llm` | `github.com/livekit/agents-go/llm` |
-| `stt` | `github.com/livekit/agents-go/stt` |
-| `tts` | `github.com/livekit/agents-go/tts` |
-| `vad` | `github.com/livekit/agents-go/vad` |
-| `inference` | `github.com/livekit/agents-go/inference` |
-| `voice` | `github.com/livekit/agents-go/voice` |
-| `AgentSession.start` production binding | `github.com/livekit/agents-go/voice/livekit.Start` |
-| `voice.RoomIO` | `github.com/livekit/agents-go/voice/roomio` |
-| `voice.RecorderIO` | `github.com/livekit/agents-go/voice/recorderio` |
-| `voice.BackgroundAudioPlayer` | `github.com/livekit/agents-go/voice/backgroundaudio` |
-| `tokenize` | `github.com/livekit/agents-go/tokenize` |
-| `telemetry` | `github.com/livekit/agents-go/telemetry` |
-| `plugins.elevenlabs` | `github.com/livekit/agents-go/plugins/elevenlabs` |
-| beta tools/workflows | `github.com/livekit/agents-go/beta/...` |
+| `@livekit/agents` / `livekit.agents` | `github.com/infinityscroll/livekit-agents-go` |
+| `llm` | `github.com/infinityscroll/livekit-agents-go/llm` |
+| `stt` | `github.com/infinityscroll/livekit-agents-go/stt` |
+| `tts` | `github.com/infinityscroll/livekit-agents-go/tts` |
+| `vad` | `github.com/infinityscroll/livekit-agents-go/vad` |
+| `inference` | `github.com/infinityscroll/livekit-agents-go/inference` |
+| `voice` | `github.com/infinityscroll/livekit-agents-go/voice` |
+| `AgentSession.start` production binding | `github.com/infinityscroll/livekit-agents-go/voice/livekit.Start` |
+| `voice.RoomIO` | `github.com/infinityscroll/livekit-agents-go/voice/roomio` |
+| `voice.RecorderIO` | `github.com/infinityscroll/livekit-agents-go/voice/recorderio` |
+| `voice.BackgroundAudioPlayer` | `github.com/infinityscroll/livekit-agents-go/voice/backgroundaudio` |
+| `tokenize` | `github.com/infinityscroll/livekit-agents-go/tokenize` |
+| `telemetry` | `github.com/infinityscroll/livekit-agents-go/telemetry` |
+| `plugins.elevenlabs` | `github.com/infinityscroll/livekit-agents-go/plugins/elevenlabs` |
+| beta tools/workflows | `github.com/infinityscroll/livekit-agents-go/beta/...` |
 
 ## Mechanical translation rules
 

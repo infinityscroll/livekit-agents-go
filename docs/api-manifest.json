@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "module": "github.com/livekit/agents-go",
+  "module": "github.com/infinityscroll/livekit-agents-go",
   "packages": [
     {
-      "import_path": "github.com/livekit/agents-go",
+      "import_path": "github.com/infinityscroll/livekit-agents-go",
       "name": "agents",
       "symbols": [
         {
@@ -1884,7 +1884,7 @@
       ]
     },
     {
-      "import_path": "github.com/livekit/agents-go/agentscli",
+      "import_path": "github.com/infinityscroll/livekit-agents-go/agentscli",
       "name": "agentscli",
       "symbols": [
         {
@@ -1955,7 +1955,7 @@
       ]
     },
     {
-      "import_path": "github.com/livekit/agents-go/beta",
+      "import_path": "github.com/infinityscroll/livekit-agents-go/beta",
       "name": "beta",
       "symbols": [
         {
@@ -2256,7 +2256,7 @@
       ]
     },
     {
-      "import_path": "github.com/livekit/agents-go/beta/tools",
+      "import_path": "github.com/infinityscroll/livekit-agents-go/beta/tools",
       "name": "tools",
       "symbols": [
         {
@@ -2497,7 +2497,7 @@
       ]
     },
     {
-      "import_path": "github.com/livekit/agents-go/beta/workflows",
+      "import_path": "github.com/infinityscroll/livekit-agents-go/beta/workflows",
       "name": "workflows",
       "symbols": [
         {
@@ -2653,7 +2653,7 @@
       ]
     },
     {
-      "import_path": "github.com/livekit/agents-go/inference",
+      "import_path": "github.com/infinityscroll/livekit-agents-go/inference",
       "name": "inference",
       "symbols": [
         {
@@ -3974,7 +3974,7 @@
       ]
     },
     {
-      "import_path": "github.com/livekit/agents-go/ipc",
+      "import_path": "github.com/infinityscroll/livekit-agents-go/ipc",
       "name": "ipc",
       "symbols": [
         {
@@ -4050,7 +4050,7 @@
       ]
     },
     {
-      "import_path": "github.com/livekit/agents-go/llm",
+      "import_path": "github.com/infinityscroll/livekit-agents-go/llm",
       "name": "llm",
       "symbols": [
         {
@@ -5616,7 +5616,7 @@
       ]
     },
     {
-      "import_path": "github.com/livekit/agents-go/llm/providerformat",
+      "import_path": "github.com/infinityscroll/livekit-agents-go/llm/providerformat",
       "name": "providerformat",
       "symbols": [
         {
@@ -5702,7 +5702,7 @@
       ]
     },
     {
-      "import_path": "github.com/livekit/agents-go/metrics",
+      "import_path": "github.com/infinityscroll/livekit-agents-go/metrics",
       "name": "metrics",
       "symbols": [
         {
@@ -6213,7 +6213,7 @@
       ]
     },
     {
-      "import_path": "github.com/livekit/agents-go/plugins/elevenlabs",
+      "import_path": "github.com/infinityscroll/livekit-agents-go/plugins/elevenlabs",
       "name": "elevenlabs",
       "symbols": [
         {
@@ -6739,7 +6739,7 @@
       ]
     },
     {
-      "import_path": "github.com/livekit/agents-go/rtcbridge",
+      "import_path": "github.com/infinityscroll/livekit-agents-go/rtcbridge",
       "name": "rtcbridge",
       "symbols": [
         {
@@ -6910,7 +6910,7 @@
       ]
     },
     {
-      "import_path": "github.com/livekit/agents-go/stream",
+      "import_path": "github.com/infinityscroll/livekit-agents-go/stream",
       "name": "stream",
       "symbols": [
         {
@@ -7076,7 +7076,7 @@
       ]
     },
     {
-      "import_path": "github.com/livekit/agents-go/stt",
+      "import_path": "github.com/infinityscroll/livekit-agents-go/stt",
       "name": "stt",
       "symbols": [
         {
@@ -7502,7 +7502,7 @@
       ]
     },
     {
-      "import_path": "github.com/livekit/agents-go/stt/testing",
+      "import_path": "github.com/infinityscroll/livekit-agents-go/stt/testing",
       "name": "stttest",
       "symbols": [
         {
@@ -7618,7 +7618,7 @@
       ]
     },
     {
-      "import_path": "github.com/livekit/agents-go/telemetry",
+      "import_path": "github.com/infinityscroll/livekit-agents-go/telemetry",
       "name": "telemetry",
       "symbols": [
         {
@@ -8384,7 +8384,7 @@
       ]
     },
     {
-      "import_path": "github.com/livekit/agents-go/tokenize",
+      "import_path": "github.com/infinityscroll/livekit-agents-go/tokenize",
       "name": "tokenize",
       "symbols": [
         {
@@ -8610,7 +8610,7 @@
       ]
     },
     {
-      "import_path": "github.com/livekit/agents-go/transcription",
+      "import_path": "github.com/infinityscroll/livekit-agents-go/transcription",
       "name": "transcription",
       "symbols": [
         {
@@ -8706,7 +8706,7 @@
       ]
     },
     {
-      "import_path": "github.com/livekit/agents-go/tts",
+      "import_path": "github.com/infinityscroll/livekit-agents-go/tts",
       "name": "tts",
       "symbols": [
         {
@@ -9507,7 +9507,7 @@
       ]
     },
     {
-      "import_path": "github.com/livekit/agents-go/vad",
+      "import_path": "github.com/infinityscroll/livekit-agents-go/vad",
       "name": "vad",
       "symbols": [
         {
@@ -9658,7 +9658,7 @@
       ]
     },
     {
-      "import_path": "github.com/livekit/agents-go/voice",
+      "import_path": "github.com/infinityscroll/livekit-agents-go/voice",
       "name": "voice",
       "symbols": [
         {
@@ -13564,7 +13564,7 @@
       ]
     },
     {
-      "import_path": "github.com/livekit/agents-go/voice/avatar",
+      "import_path": "github.com/infinityscroll/livekit-agents-go/voice/avatar",
       "name": "avatar",
       "symbols": [
         {
@@ -14060,7 +14060,7 @@
       ]
     },
     {
-      "import_path": "github.com/livekit/agents-go/voice/avatar/roomioadapter",
+      "import_path": "github.com/infinityscroll/livekit-agents-go/voice/avatar/roomioadapter",
       "name": "roomioadapter",
       "symbols": [
         {
@@ -14071,7 +14071,7 @@
       ]
     },
     {
-      "import_path": "github.com/livekit/agents-go/voice/backgroundaudio",
+      "import_path": "github.com/infinityscroll/livekit-agents-go/voice/backgroundaudio",
       "name": "backgroundaudio",
       "symbols": [
         {
@@ -14492,7 +14492,7 @@
       ]
     },
     {
-      "import_path": "github.com/livekit/agents-go/voice/livekit",
+      "import_path": "github.com/infinityscroll/livekit-agents-go/voice/livekit",
       "name": "livekit",
       "symbols": [
         {
@@ -14608,7 +14608,7 @@
       ]
     },
     {
-      "import_path": "github.com/livekit/agents-go/voice/recorderio",
+      "import_path": "github.com/infinityscroll/livekit-agents-go/voice/recorderio",
       "name": "recorderio",
       "symbols": [
         {
@@ -14889,7 +14889,7 @@
       ]
     },
     {
-      "import_path": "github.com/livekit/agents-go/voice/roomio",
+      "import_path": "github.com/infinityscroll/livekit-agents-go/voice/roomio",
       "name": "roomio",
       "symbols": [
         {
@@ -15705,7 +15705,7 @@
       ]
     },
     {
-      "import_path": "github.com/livekit/agents-go/voice/testing",
+      "import_path": "github.com/infinityscroll/livekit-agents-go/voice/testing",
       "name": "voicetest",
       "symbols": [
         {
@@ -16061,7 +16061,7 @@
       ]
     },
     {
-      "import_path": "github.com/livekit/agents-go/voice/transcription",
+      "import_path": "github.com/infinityscroll/livekit-agents-go/voice/transcription",
       "name": "transcription",
       "symbols": [
         {
@@ -16122,7 +16122,7 @@
       ]
     },
     {
-      "import_path": "github.com/livekit/agents-go/workflows",
+      "import_path": "github.com/infinityscroll/livekit-agents-go/workflows",
       "name": "workflows",
       "symbols": [
         {
@@ -16648,7 +16648,7 @@
       ]
     },
     {
-      "import_path": "github.com/livekit/agents-go/workflows/livekit",
+      "import_path": "github.com/infinityscroll/livekit-agents-go/workflows/livekit",
       "name": "livekit",
       "symbols": [
         {

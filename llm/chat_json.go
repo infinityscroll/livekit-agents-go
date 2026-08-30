@@ -10,7 +10,7 @@ import (
 	"math"
 	"time"
 
-	agents "github.com/livekit/agents-go"
+	agents "github.com/infinityscroll/livekit-agents-go"
 )
 
 // ChatContextJSONOptions controls the portable chat-history representation.

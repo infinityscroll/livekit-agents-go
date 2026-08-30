@@ -13,8 +13,8 @@ import (
 	"unicode/utf8"
 
 	"github.com/gorilla/websocket"
-	agents "github.com/livekit/agents-go"
-	"github.com/livekit/agents-go/tokenize"
+	agents "github.com/infinityscroll/livekit-agents-go"
+	"github.com/infinityscroll/livekit-agents-go/tokenize"
 )
 
 const (

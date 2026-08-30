@@ -14,7 +14,7 @@ import (
 	"testing"
 	"time"
 
-	agents "github.com/livekit/agents-go"
+	agents "github.com/infinityscroll/livekit-agents-go"
 	sdktrace "go.opentelemetry.io/otel/sdk/trace"
 	collectortrace "go.opentelemetry.io/proto/otlp/collector/trace/v1"
 	commonv1 "go.opentelemetry.io/proto/otlp/common/v1"

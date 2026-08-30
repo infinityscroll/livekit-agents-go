@@ -8,7 +8,7 @@ import (
 	"fmt"
 	"strings"
 
-	agents "github.com/livekit/agents-go"
+	agents "github.com/infinityscroll/livekit-agents-go"
 )
 
 func main() {

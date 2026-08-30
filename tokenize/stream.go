@@ -12,8 +12,8 @@ import (
 	"sync/atomic"
 	"unicode/utf8"
 
-	agents "github.com/livekit/agents-go"
-	"github.com/livekit/agents-go/stream"
+	agents "github.com/infinityscroll/livekit-agents-go"
+	"github.com/infinityscroll/livekit-agents-go/stream"
 )
 
 // DefaultMaxBufferedBytes bounds text retained by an incremental tokenizer

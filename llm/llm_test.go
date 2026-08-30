@@ -7,7 +7,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/livekit/agents-go/metrics"
+	"github.com/infinityscroll/livekit-agents-go/metrics"
 )
 
 func TestBaseStreamCollectAndMetrics(t *testing.T) {

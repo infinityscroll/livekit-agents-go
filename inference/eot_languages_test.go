@@ -9,7 +9,7 @@ import (
 	"sync"
 	"testing"
 
-	agents "github.com/livekit/agents-go"
+	agents "github.com/infinityscroll/livekit-agents-go"
 )
 
 func TestLocalTurnThresholdsExact(t *testing.T) {

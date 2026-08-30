@@ -10,9 +10,9 @@ import (
 	"sync/atomic"
 	"time"
 
-	agents "github.com/livekit/agents-go"
-	"github.com/livekit/agents-go/stream"
-	"github.com/livekit/agents-go/voice"
+	agents "github.com/infinityscroll/livekit-agents-go"
+	"github.com/infinityscroll/livekit-agents-go/stream"
+	"github.com/infinityscroll/livekit-agents-go/voice"
 	mediabase "github.com/livekit/media-sdk"
 	protolg "github.com/livekit/protocol/logger"
 	lksdk "github.com/livekit/server-sdk-go/v2"

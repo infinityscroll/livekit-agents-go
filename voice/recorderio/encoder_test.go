@@ -14,8 +14,8 @@ import (
 	"testing"
 	"time"
 
-	agents "github.com/livekit/agents-go"
-	"github.com/livekit/agents-go/voice"
+	agents "github.com/infinityscroll/livekit-agents-go"
+	"github.com/infinityscroll/livekit-agents-go/voice"
 )
 
 func TestMonoConverterResamplesAndDownmixes(t *testing.T) {

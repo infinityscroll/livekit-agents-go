@@ -1,4 +1,4 @@
-module github.com/livekit/agents-go
+module github.com/infinityscroll/livekit-agents-go
 
 go 1.26.0
 

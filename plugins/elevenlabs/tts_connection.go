@@ -12,7 +12,7 @@ import (
 	"time"
 
 	"github.com/gorilla/websocket"
-	agents "github.com/livekit/agents-go"
+	agents "github.com/infinityscroll/livekit-agents-go"
 )
 
 type ttsCommandKind uint8

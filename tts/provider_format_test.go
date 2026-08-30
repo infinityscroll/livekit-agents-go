@@ -12,9 +12,9 @@ import (
 	"testing"
 	"time"
 
-	agents "github.com/livekit/agents-go"
-	"github.com/livekit/agents-go/tokenize"
-	"github.com/livekit/agents-go/tts"
+	agents "github.com/infinityscroll/livekit-agents-go"
+	"github.com/infinityscroll/livekit-agents-go/tokenize"
+	"github.com/infinityscroll/livekit-agents-go/tts"
 )
 
 const joke = `<expr type="expression" label="say playfully"/> Why did the burger go to the gym? ` +

@@ -9,7 +9,7 @@ import (
 	"sort"
 	"strings"
 
-	agents "github.com/livekit/agents-go"
+	agents "github.com/infinityscroll/livekit-agents-go"
 	"github.com/livekit/protocol/livekit"
 )
 

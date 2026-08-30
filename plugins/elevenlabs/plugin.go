@@ -5,16 +5,18 @@ package elevenlabs
 import (
 	"context"
 
-	agents "github.com/livekit/agents-go"
+	agents "github.com/infinityscroll/livekit-agents-go"
 )
 
 const Version = "1.7.1"
 
 type Plugin struct{}
 
-func (Plugin) Title() string                       { return "ElevenLabs" }
-func (Plugin) Version() string                     { return Version }
-func (Plugin) Package() string                     { return "github.com/livekit/agents-go/plugins/elevenlabs" }
+func (Plugin) Title() string   { return "ElevenLabs" }
+func (Plugin) Version() string { return Version }
+func (Plugin) Package() string {
+	return "github.com/infinityscroll/livekit-agents-go/plugins/elevenlabs"
+}
 func (Plugin) DownloadFiles(context.Context) error { return nil }
 
 // Register adds the plugin metadata to the process registry. Registration is

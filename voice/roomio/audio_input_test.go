@@ -6,7 +6,7 @@ import (
 	"context"
 	"testing"
 
-	agents "github.com/livekit/agents-go"
+	agents "github.com/infinityscroll/livekit-agents-go"
 	mediabase "github.com/livekit/media-sdk"
 	lksdk "github.com/livekit/server-sdk-go/v2"
 )

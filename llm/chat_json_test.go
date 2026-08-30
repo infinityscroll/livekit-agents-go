@@ -8,7 +8,7 @@ import (
 	"testing"
 	"time"
 
-	agents "github.com/livekit/agents-go"
+	agents "github.com/infinityscroll/livekit-agents-go"
 )
 
 func TestChatContextJSONMatchesAgentsJSSurface(t *testing.T) {

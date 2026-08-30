@@ -10,7 +10,7 @@ import (
 	"sync"
 	"testing"
 
-	"github.com/livekit/agents-go/llm"
+	"github.com/infinityscroll/livekit-agents-go/llm"
 )
 
 type taskGroupTestTask struct {

@@ -10,9 +10,9 @@ import (
 	"testing"
 	"time"
 
-	agents "github.com/livekit/agents-go"
-	"github.com/livekit/agents-go/metrics"
-	"github.com/livekit/agents-go/vad"
+	agents "github.com/infinityscroll/livekit-agents-go"
+	"github.com/infinityscroll/livekit-agents-go/metrics"
+	"github.com/infinityscroll/livekit-agents-go/vad"
 )
 
 type adapterTestVAD struct {

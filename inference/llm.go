@@ -16,8 +16,8 @@ import (
 	"sync"
 	"sync/atomic"
 
-	agents "github.com/livekit/agents-go"
-	llmpkg "github.com/livekit/agents-go/llm"
+	agents "github.com/infinityscroll/livekit-agents-go"
+	llmpkg "github.com/infinityscroll/livekit-agents-go/llm"
 )
 
 const (

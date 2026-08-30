@@ -4,7 +4,7 @@ The root `beta` package and `beta/workflows` retain deprecated aliases for the
 pinned agents-js beta exports. New code should import stable workflows directly:
 
 ```go
-import "github.com/livekit/agents-go/workflows"
+import "github.com/infinityscroll/livekit-agents-go/workflows"
 ```
 
 ## DTMF

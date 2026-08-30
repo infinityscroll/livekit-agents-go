@@ -9,8 +9,8 @@ import (
 	"sync/atomic"
 	"time"
 
-	agents "github.com/livekit/agents-go"
-	"github.com/livekit/agents-go/voice"
+	agents "github.com/infinityscroll/livekit-agents-go"
+	"github.com/infinityscroll/livekit-agents-go/voice"
 )
 
 type pauseInterval struct{ start, end time.Time }

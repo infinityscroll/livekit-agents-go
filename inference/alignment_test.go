@@ -8,8 +8,8 @@ import (
 	"testing"
 	"time"
 
-	agents "github.com/livekit/agents-go"
-	"github.com/livekit/agents-go/tts"
+	agents "github.com/infinityscroll/livekit-agents-go"
+	"github.com/infinityscroll/livekit-agents-go/tts"
 )
 
 func TestDecodeTTSAlignmentProviderDialects(t *testing.T) {

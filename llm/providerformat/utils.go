@@ -7,7 +7,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/livekit/agents-go/llm"
+	"github.com/infinityscroll/livekit-agents-go/llm"
 )
 
 // ChatItemGroup is one coherent provider turn. An assistant message may share

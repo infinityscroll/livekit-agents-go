@@ -11,8 +11,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/livekit/agents-go/stream"
-	"github.com/livekit/agents-go/tokenize"
+	"github.com/infinityscroll/livekit-agents-go/stream"
+	"github.com/infinityscroll/livekit-agents-go/tokenize"
 )
 
 const sentenceText = "Hi! " +

@@ -10,7 +10,7 @@ import (
 	"fmt"
 	"sync"
 
-	agents "github.com/livekit/agents-go"
+	agents "github.com/infinityscroll/livekit-agents-go"
 	mediabase "github.com/livekit/media-sdk"
 	"github.com/livekit/protocol/livekit"
 	protolg "github.com/livekit/protocol/logger"

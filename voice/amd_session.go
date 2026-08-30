@@ -10,9 +10,9 @@ import (
 	"sync"
 	"time"
 
-	agents "github.com/livekit/agents-go"
-	"github.com/livekit/agents-go/llm"
-	"github.com/livekit/agents-go/stt"
+	agents "github.com/infinityscroll/livekit-agents-go"
+	"github.com/infinityscroll/livekit-agents-go/llm"
+	"github.com/infinityscroll/livekit-agents-go/stt"
 )
 
 var agentSessionAMDRegistry sync.Map

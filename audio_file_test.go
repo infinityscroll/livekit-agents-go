@@ -13,7 +13,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/livekit/agents-go/stream"
+	"github.com/infinityscroll/livekit-agents-go/stream"
 )
 
 func writeTestWAV(t *testing.T, sampleRate, channels int, samples []int16) string {

@@ -5,8 +5,8 @@ package inference
 import (
 	"context"
 
-	agents "github.com/livekit/agents-go"
-	"github.com/livekit/agents-go/tts"
+	agents "github.com/infinityscroll/livekit-agents-go"
+	"github.com/infinityscroll/livekit-agents-go/tts"
 )
 
 // TTSAlignmentDecoder is the provider-alignment extension seam used by the

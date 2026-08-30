@@ -14,11 +14,11 @@ import (
 	"sync"
 	"time"
 
-	agents "github.com/livekit/agents-go"
-	"github.com/livekit/agents-go/inference"
-	"github.com/livekit/agents-go/llm"
-	"github.com/livekit/agents-go/metrics"
-	"github.com/livekit/agents-go/stt"
+	agents "github.com/infinityscroll/livekit-agents-go"
+	"github.com/infinityscroll/livekit-agents-go/inference"
+	"github.com/infinityscroll/livekit-agents-go/llm"
+	"github.com/infinityscroll/livekit-agents-go/metrics"
+	"github.com/infinityscroll/livekit-agents-go/stt"
 	"go.opentelemetry.io/otel"
 	"go.opentelemetry.io/otel/attribute"
 	"go.opentelemetry.io/otel/codes"
@@ -515,7 +515,7 @@ func (a *AMD) Start(parent context.Context) (*AMDExecution, error) {
 		}
 	}
 
-	spanCtx, span := otel.Tracer("github.com/livekit/agents-go/voice").Start(parent, amdSpanName,
+	spanCtx, span := otel.Tracer("github.com/infinityscroll/livekit-agents-go/voice").Start(parent, amdSpanName,
 		trace.WithAttributes(
 			attribute.Bool(amdAttrInterruptOnMachine, a.opts.interruptOnMachine),
 			attribute.String(amdAttrOperationName, "classification"),

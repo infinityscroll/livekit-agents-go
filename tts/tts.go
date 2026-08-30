@@ -10,9 +10,9 @@ import (
 	"time"
 	"unicode/utf8"
 
-	agents "github.com/livekit/agents-go"
-	"github.com/livekit/agents-go/metrics"
-	"github.com/livekit/agents-go/stream"
+	agents "github.com/infinityscroll/livekit-agents-go"
+	"github.com/infinityscroll/livekit-agents-go/metrics"
+	"github.com/infinityscroll/livekit-agents-go/stream"
 )
 
 type SynthesizedAudio struct {

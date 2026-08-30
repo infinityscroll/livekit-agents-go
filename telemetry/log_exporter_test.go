@@ -16,7 +16,7 @@ import (
 	"testing"
 	"time"
 
-	agents "github.com/livekit/agents-go"
+	agents "github.com/infinityscroll/livekit-agents-go"
 )
 
 func testExporter(t *testing.T, endpoint string, gate *UploadGate, client *http.Client) *SimpleOTLPHTTPLogExporter {

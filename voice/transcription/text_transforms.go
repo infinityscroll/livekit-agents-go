@@ -14,7 +14,7 @@ import (
 	"unicode"
 	"unicode/utf8"
 
-	"github.com/livekit/agents-go/stream"
+	"github.com/infinityscroll/livekit-agents-go/stream"
 )
 
 type TextTransform interface {

@@ -12,8 +12,8 @@ import (
 	"testing"
 	"time"
 
-	agents "github.com/livekit/agents-go"
-	vadpkg "github.com/livekit/agents-go/vad"
+	agents "github.com/infinityscroll/livekit-agents-go"
+	vadpkg "github.com/infinityscroll/livekit-agents-go/vad"
 )
 
 type scriptedVADPredictor struct {

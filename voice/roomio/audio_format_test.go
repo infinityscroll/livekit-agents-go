@@ -6,7 +6,7 @@ import (
 	"errors"
 	"testing"
 
-	agents "github.com/livekit/agents-go"
+	agents "github.com/infinityscroll/livekit-agents-go"
 )
 
 func TestConvertAudioFrameChannelsAndRate(t *testing.T) {

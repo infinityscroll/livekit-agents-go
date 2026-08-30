@@ -9,7 +9,7 @@ import (
 	"math"
 	"time"
 
-	"github.com/livekit/agents-go/voice"
+	"github.com/infinityscroll/livekit-agents-go/voice"
 )
 
 const (

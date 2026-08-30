@@ -6,7 +6,7 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/livekit/agents-go/stt"
+	"github.com/infinityscroll/livekit-agents-go/stt"
 )
 
 func TestModelStringParsing(t *testing.T) {

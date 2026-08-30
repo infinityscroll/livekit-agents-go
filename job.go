@@ -11,8 +11,8 @@ import (
 	"slices"
 	"sync"
 
-	"github.com/livekit/agents-go/ipc"
-	"github.com/livekit/agents-go/rtcbridge"
+	"github.com/infinityscroll/livekit-agents-go/ipc"
+	"github.com/infinityscroll/livekit-agents-go/rtcbridge"
 	"github.com/livekit/protocol/livekit"
 	lksdk "github.com/livekit/server-sdk-go/v2"
 	"google.golang.org/protobuf/proto"

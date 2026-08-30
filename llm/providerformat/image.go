@@ -9,7 +9,7 @@ import (
 	"net/http"
 	"strings"
 
-	"github.com/livekit/agents-go/llm"
+	"github.com/infinityscroll/livekit-agents-go/llm"
 )
 
 type serializedImage struct {

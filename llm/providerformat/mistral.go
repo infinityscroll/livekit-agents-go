@@ -2,7 +2,7 @@
 
 package providerformat
 
-import "github.com/livekit/agents-go/llm"
+import "github.com/infinityscroll/livekit-agents-go/llm"
 
 // MistralFormatData carries Mistral Conversations API instructions.
 type MistralFormatData struct {

@@ -3,7 +3,7 @@
 // Package workflows contains reusable, context-first agent workflows.
 package workflows
 
-import "github.com/livekit/agents-go/llm"
+import "github.com/infinityscroll/livekit-agents-go/llm"
 
 // InstructionPart is one replaceable section of a built-in workflow prompt.
 // TextInstruction is the convenient form for ordinary text; ModalInstruction

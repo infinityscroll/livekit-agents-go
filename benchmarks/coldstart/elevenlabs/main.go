@@ -5,7 +5,7 @@ package main
 import (
 	"runtime"
 
-	"github.com/livekit/agents-go/plugins/elevenlabs"
+	"github.com/infinityscroll/livekit-agents-go/plugins/elevenlabs"
 )
 
 var linkedSTT = elevenlabs.NewSTT

@@ -10,8 +10,8 @@ import (
 	"os"
 	"sync"
 
-	"github.com/livekit/agents-go/inference"
-	"github.com/livekit/agents-go/voice"
+	"github.com/infinityscroll/livekit-agents-go/inference"
+	"github.com/infinityscroll/livekit-agents-go/voice"
 	lksdk "github.com/livekit/server-sdk-go/v2"
 )
 

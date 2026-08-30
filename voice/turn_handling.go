@@ -7,8 +7,8 @@ import (
 	"fmt"
 	"time"
 
-	agents "github.com/livekit/agents-go"
-	"github.com/livekit/agents-go/inference"
+	agents "github.com/infinityscroll/livekit-agents-go"
+	"github.com/infinityscroll/livekit-agents-go/inference"
 )
 
 type TurnDetectionMode string

@@ -8,8 +8,8 @@ import (
 	"math"
 	"time"
 
-	"github.com/livekit/agents-go/llm"
-	"github.com/livekit/agents-go/metrics"
+	"github.com/infinityscroll/livekit-agents-go/llm"
+	"github.com/infinityscroll/livekit-agents-go/metrics"
 	agentpb "github.com/livekit/protocol/livekit/agent"
 	"google.golang.org/protobuf/types/known/durationpb"
 	"google.golang.org/protobuf/types/known/timestamppb"

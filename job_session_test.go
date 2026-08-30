@@ -13,7 +13,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/livekit/agents-go/rtcbridge"
+	"github.com/infinityscroll/livekit-agents-go/rtcbridge"
 	"github.com/livekit/protocol/livekit"
 )
 

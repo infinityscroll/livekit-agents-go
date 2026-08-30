@@ -5,7 +5,7 @@ package main
 import (
 	"runtime"
 
-	"github.com/livekit/agents-go/voice"
+	"github.com/infinityscroll/livekit-agents-go/voice"
 )
 
 var linked = voice.NewAgentSession[struct{}]

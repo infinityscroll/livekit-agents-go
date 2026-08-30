@@ -8,8 +8,8 @@ import (
 	"log/slog"
 	"time"
 
-	agents "github.com/livekit/agents-go"
-	"github.com/livekit/agents-go/voice"
+	agents "github.com/infinityscroll/livekit-agents-go"
+	"github.com/infinityscroll/livekit-agents-go/voice"
 	"github.com/livekit/protocol/livekit"
 	lksdk "github.com/livekit/server-sdk-go/v2"
 	lkmedia "github.com/livekit/server-sdk-go/v2/pkg/media"
