@@ -7,7 +7,7 @@ toolchain go1.27.0
 require (
 	github.com/google/uuid v1.6.0
 	github.com/gorilla/websocket v1.5.4-0.20250319132907-e064f32e3674
-	github.com/livekit/media-sdk v0.0.0-20260605212526-4c11a51d3c97
+	github.com/livekit/media-sdk v0.1.1
 	github.com/livekit/protocol v1.50.4
 	github.com/livekit/server-sdk-go/v2 v2.18.1
 	github.com/pion/webrtc/v4 v4.2.15
