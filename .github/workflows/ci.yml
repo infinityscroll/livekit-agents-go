@@ -186,7 +186,7 @@ jobs:
         run: |
           mkdir -p dist
           git archive --format=tar.gz --prefix="livekit-agents-go-${GITHUB_REF_NAME}/" -o "dist/livekit-agents-go-${GITHUB_REF_NAME}.tar.gz" HEAD
-      - uses: anchore/sbom-action@aa80c8c5bd439a416a62804f2151ab38c671a638 # v0.24.1
+      - uses: anchore/sbom-action@66cbf4bc1f1c0d2edc94016e65bc221b6bb0ad6c # v0.24.3
         with:
           path: .
           format: spdx-json
